@@ -96,11 +96,7 @@ class LogIn extends React.Component {
           />
         </div>
 
-        <Button
-          isUser={this.state.isUser}
-          username={this.state.first}
-          password={this.state.last}
-        />
+        <Button username={this.state.first} password={this.state.last} />
       </div>
     );
   }

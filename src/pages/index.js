@@ -1,12 +1,12 @@
-import * as React from "react"
-import "./index.css"
-import Query from "./logIn"
-import { useStaticQuery, graphql } from "gatsby"
-import { Router, Link, navigate } from "@reach/router"
-import { render } from "react-dom"
-import Layout from "../../components/layout"
-import Recommended from "../../components/recommended"
-import LogIn from "./logIn"
+import * as React from "react";
+import "./index.css";
+import Query from "./logIn";
+import { useStaticQuery, graphql } from "gatsby";
+import { Router, Link, navigate } from "@reach/router";
+import { render } from "react-dom";
+import Layout from "../../components/layout";
+import Recommended from "../../components/recommended";
+import LogIn from "./logIn";
 
 function FirstPage() {
   return (
@@ -16,29 +16,25 @@ function FirstPage() {
 
         <button
           class="indexButton1"
-          onClick={() =>
-            navigate("logIn", { state: { user: true }, replace: false })
-          }
+          onClick={() => navigate("logIn", { state: { user: true } })}
         >
           Log In
         </button>
 
         <button class="indexButton">Register</button>
         <button
-          onClick={() =>
-            navigate("guest", { state: { user: false }, replace: false })
-          }
+          onClick={() => navigate("guest", { state: { user: false } })}
           class="indexButton"
         >
           Guest
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-let Home = () => <div>Home</div>
-let Dash = () => <div>Dash</div>
+let Home = () => <div>Home</div>;
+let Dash = () => <div>Dash</div>;
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -52,8 +48,8 @@ export default () => {
         }
       }
     }
-  `)
-  console.log(data.site.siteMetadata.postInfo)
+  `);
+  console.log(data.site.siteMetadata.postInfo);
 
-  return <FirstPage />
-}
+  return <FirstPage />;
+};

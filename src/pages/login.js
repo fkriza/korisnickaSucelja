@@ -42,7 +42,7 @@ function Button(user) {
             ) {
               flag = true;
               console.log("if:___", userData[i]);
-              navigate("/recommended");
+              navigate("recommended");
             }
           }
           if (!flag) alert("Error: Wrong username or password");

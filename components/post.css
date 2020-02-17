@@ -21,6 +21,7 @@ p {
   font-weight: normal;
   border-top-style: solid;
   border-top-color: lightgray;
+  margin-bottom: 1%;
 }
 .cm1 {
   border-style: ridge;

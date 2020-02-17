@@ -1,12 +1,12 @@
 import * as React from "react";
 import "./index.css";
-import Query from "./logIn";
+import Query from "./login";
 import { useStaticQuery, graphql } from "gatsby";
 import { Router, Link, navigate } from "@reach/router";
 import { render } from "react-dom";
 import Layout from "../../components/layout";
 import Recommended from "../../components/recommended";
-import LogIn from "./logIn";
+import LogIn from "./login";
 
 function FirstPage() {
   return (
@@ -16,7 +16,7 @@ function FirstPage() {
 
         <button
           class="indexButton1"
-          onClick={() => navigate("logIn", { state: { user: true } })}
+          onClick={() => navigate("login", { state: { user: true } })}
         >
           Log In
         </button>

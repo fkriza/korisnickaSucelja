@@ -14,18 +14,12 @@ function FirstPage() {
       <div class="content">
         <p class="indexTitle">Event Handler</p>
 
-        <button
-          class="indexButton1"
-          onClick={() => navigate("login", { state: { user: true } })}
-        >
+        <button class="indexButton1" onClick={() => navigate("login")}>
           Log In
         </button>
 
         <button class="indexButton">Register</button>
-        <button
-          onClick={() => navigate("guest", { state: { user: false } })}
-          class="indexButton"
-        >
+        <button onClick={() => navigate("guest")} class="indexButton">
           Guest
         </button>
       </div>

@@ -1,58 +1,10 @@
 import React, { useState } from "react";
-import "./logIn.css";
+import "./register.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Router, Link, navigate } from "@reach/router";
 import { render } from "react-dom";
-import Recommended from "../../components/recommended";
 
-function Button(user) {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      site {
-        siteMetadata {
-          postInfo {
-            password
-            username
-          }
-        }
-      }
-    }
-  `);
-  const userData = data.site.siteMetadata.postInfo;
-  console.log("bla ", user.username);
-  return (
-    <div>
-      <button
-        class="logButton"
-        onClick={() => {
-          let flag = false;
-          console.log(userData.length);
-          for (let i = 0; i < userData.length; i++) {
-            console.log(
-              "iteration: ",
-              user.username,
-              userData[i].username,
-              user.password,
-              userData[i].password
-            );
-            if (
-              user.username == userData[i].username &&
-              user.password == userData[i].password
-            ) {
-              flag = true;
-              console.log("if:___", userData[i]);
-              navigate("../recommended", { replace: false });
-            }
-          }
-          if (!flag) alert("Error: Wrong username or password");
-        }}
-      >
-        LOG IN
-      </button>
-    </div>
-  );
-}
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
@@ -84,64 +36,65 @@ class LogIn extends React.Component {
   updatePassword(e) {
     this.setState({ password: e.target.value });
   }
+  updateUsername(e) {
+    this.setState({ username: e.target.value });
+  }
   render() {
     return (
-      <div class="content1">
-        <Router>
-          <Recommended path="recommended" />
-        </Router>
-        <div class="firstName">
+      <div id="content11">
+        <div id="firstName1">
           <label>First Name: </label>
           <input
-            class="first"
+            id="first1"
             value={this.state.name}
             type="text"
             placeholder="First Name ..."
             onChange={this.updateName.bind(this)}
           />
         </div>
-        <div class="firstName">
+        <div id="firstName1">
           <label>Last Name: </label>
           <input
-            class="first"
+            id="first1"
             value={this.state.surname}
             type="text"
             placeholder="Username ..."
             onChange={this.updateSurname.bind(this)}
           />
         </div>
-        <div class="firstName">
+        <div id="firstName1">
           <label>E-mail adress: </label>
           <input
-            class="first"
+            id="first1"
             value={this.state.email}
             type="text"
             placeholder="Username ..."
             onChange={this.updateEMail.bind(this)}
           />
         </div>
-        <div class="firstName">
+        <div id="firstName1">
           <label>Username: </label>
           <input
-            class="first"
+            id="first1"
             value={this.state.username}
             type="text"
             placeholder="Username ..."
             onChange={this.updateUsername.bind(this)}
           />
         </div>
-        <div class="firstName">
+        <div id="firstName1">
           <label>Password: </label>
           <input
-            class="first"
+            id="first1"
             value={this.state.password}
             type="password"
             placeholder="Password ..."
             onChange={this.updatePassword.bind(this)}
           />
         </div>
-
-        <Button username={this.state.first} password={this.state.last} />
+        <button id="logButton111" id="logButton111">
+          Register
+        </button>{" "}
       </div>
     );
   }

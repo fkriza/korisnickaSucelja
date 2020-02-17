@@ -1,18 +1,18 @@
-import React from "react"
-import "./post.css"
+import React from "react";
+import "./post.css";
 class Post extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       comment: "",
-      comments: props.data.comments,
-    }
+      comments: props.data.comments
+    };
   }
   updateLast(e) {
-    this.setState({ comment: e.target.value })
+    this.setState({ comment: e.target.value });
   }
   render() {
-    console.log(this.state.comments)
+    console.log(this.state.comments);
     return (
       <div class="Post">
         <div class="postInfo">
@@ -69,8 +69,8 @@ class Post extends React.Component {
                 onClick={() => {
                   this.setState({
                     comments: this.state.comments.concat(this.state.comment),
-                    comment: "",
-                  })
+                    comment: ""
+                  });
                 }}
               >
                 Submit
@@ -80,8 +80,8 @@ class Post extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Post
+export default Post;

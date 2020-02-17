@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import "./logIn.css"
-import { graphql, useStaticQuery } from "gatsby"
+import React, { useState } from "react";
+import "./logIn.css";
+import { graphql, useStaticQuery } from "gatsby";
 
-import { Router, Link, navigate } from "@reach/router"
-import { render } from "react-dom"
-import Recommended from "../../components/recommended"
+import { Router, Link, navigate } from "@reach/router";
+import { render } from "react-dom";
+import Recommended from "../../components/recommended";
 
 function Button(user) {
   const data = useStaticQuery(graphql`
@@ -18,16 +18,16 @@ function Button(user) {
         }
       }
     }
-  `)
-  const userData = data.site.siteMetadata.postInfo
-  console.log("bla ", user.username)
+  `);
+  const userData = data.site.siteMetadata.postInfo;
+  console.log("bla ", user.username);
   return (
     <div>
       <button
         class="logButton"
         onClick={() => {
-          let flag = false
-          console.log(userData.length)
+          let flag = false;
+          console.log(userData.length);
           for (let i = 0; i < userData.length; i++) {
             console.log(
               "iteration: ",
@@ -35,42 +35,41 @@ function Button(user) {
               userData[i].username,
               user.password,
               userData[i].password
-            )
+            );
             if (
               user.username == userData[i].username &&
               user.password == userData[i].password
             ) {
-              flag = true
-              console.log("if:___", userData[i])
-              navigate("/recommended")
+              flag = true;
+              console.log("if:___", userData[i]);
+              navigate("/recommended");
             }
           }
-          if (!flag) alert("Error: Wrong username or password")
+          if (!flag) alert("Error: Wrong username or password");
         }}
       >
         LOG IN
       </button>
     </div>
-  )
+  );
 }
 class LogIn extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       first: "",
-      last: "",
-    }
+      last: ""
+    };
   }
 
   updateInput(e) {
-    this.setState({ first: e.target.value })
+    this.setState({ first: e.target.value });
   }
   updateLast(e) {
-    this.setState({ last: e.target.value })
+    this.setState({ last: e.target.value });
   }
 
   render() {
-    console.log("aaa", this.state.first, this.state.last, this.state.isUser)
     return (
       <div class="content1">
         <Router>
@@ -103,7 +102,7 @@ class LogIn extends React.Component {
           password={this.state.last}
         />
       </div>
-    )
+    );
   }
 }
-export default LogIn
+export default LogIn;

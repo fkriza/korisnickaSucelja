@@ -22,6 +22,7 @@ p {
   border-top-style: solid;
   border-top-color: lightgray;
   margin-bottom: 1%;
+  height: 20px;
 }
 .cm1 {
   border-style: ridge;

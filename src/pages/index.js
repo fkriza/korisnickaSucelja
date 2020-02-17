@@ -18,7 +18,9 @@ function FirstPage() {
           Log In
         </button>
 
-        <button class="indexButton">Register</button>
+        <button class="indexButton" onClick={() => navigate("register")}>
+          Register
+        </button>
         <button onClick={() => navigate("guest")} class="indexButton">
           Guest
         </button>

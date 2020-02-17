@@ -1,7 +1,7 @@
-import React from "react"
-import "./header.css"
-import { FaUser } from "react-icons/fa"
-import { navigate } from "@reach/router"
+import React from "react";
+import "./header.css";
+import { FaUser } from "react-icons/fa";
+import { navigate } from "@reach/router";
 
 const Header = () => {
   return (
@@ -13,7 +13,7 @@ const Header = () => {
         />
         <p
           onClick={() => {
-            navigate("recommended")
+            navigate("recommended");
           }}
           class="appName"
         >
@@ -25,7 +25,7 @@ const Header = () => {
         <div class="bla">
           <p class="username">fkriza01</p>
           <div />
-          <button class="logOut" onClick={() => navigate("/")}>
+          <button class="logOut" onClick={() => navigate("../")}>
             <p class="logOutText">Log out</p>
           </button>
           <div />
@@ -33,7 +33,7 @@ const Header = () => {
       </div>
       <div />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
